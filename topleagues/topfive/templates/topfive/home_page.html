@@ -1,0 +1,26 @@
+{% extends 'topfive/base.html' %}
+ 
+{% block content %}
+
+<table class="main_page_table">
+    <tr class="inscription_main"><td><h1>TOP FIVE</h1></td></tr>
+    <tr class="inscription_main"><td><h3>сайт о лучших лигах и клубах европы</h3></td></tr>
+    <tr><td>
+        <table class="logo_in_main">
+            <tr>{% for league in list_of_leagues %}
+                <td><img src="{{league.league.logo.url}}"  width=100></td>
+            {% endfor %}</tr>
+        </table>
+    <tr><td>
+        <table class="logo_in_main">
+            <tr>{% for club in clubs|slice:"20" %}
+                <td><img src="{{club.name_club.logo.url}}"  width=50></td>
+            {% endfor %}</tr>
+            <tr>{% for club in clubs|slice:"20:" %}
+                <td><img src="{{club.name_club.logo.url}}"  width=50></td>
+            {% endfor %}</tr>
+        </table>
+    </td></tr>
+</table>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link type="text/css" href="{% static 'topfive/css/styles.css' %}" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="shortcut icon" href="{% static 'topfive/images/main.ico' %}" type="image/x-icon"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<table class="table-page" border=0 cellpadding="0" cellspacing="0">
+<tr><td valign=top>
+{% block mainmenu %}
+<div class="header">
+	<ul id="mainmenu" class="mainmenu">
+		<li class="logo"><a href="{% url 'home' %}"><div class="logo"></div></a></li>
+		<li class="logo2"><a href="{% url 'home' %}"><div class="logo2"></div></a></li>
+		{% for element in menu %}
+			<li><a href="{% url element.url_name %}">{{element.title}}</a></li>
+		{% endfor %}
+	</ul>
+	<div class="clear"></div>
+</div>
+{% endblock mainmenu %}
+
+
+<table class="table-content" border=0 cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" class="left-chapters">
+	<ul id="leftchapters">
+		{% for league in list_of_leagues %}
+		   <li>
+			   <a href="{{ league.get_absolute_url }}">
+				   {{league.league.name_of_league}}
+				   <img class="leftchapters-img" src="{{league.league.logo.url}}">
+			   </a>
+		   </li>
+		{% endfor %}
+	</ul>
+</td>
+<td valign="top" class="content">
+
+<div class="content-text">
+	{% block content %}
+	{% endblock %}
+</div>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- Footer -->
+<tr><td valign=top>
+	<div id="footer">
+		<p>&copy; 2023 Частичное или полное копирование информации с данного сайта возможно если нужно, автор разрешает :)</p>
+	</div>
+</td></tr></table>
+<!-- Конец footer'а и страницы -->
+</body>
+</html>

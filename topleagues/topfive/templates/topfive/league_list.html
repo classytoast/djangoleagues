@@ -1,0 +1,56 @@
+{% extends 'topfive/base.html' %}
+ 
+{% block content %}
+
+<div class="league-title"><h1>{{ title }}</h1></div>
+<table class="league-header">
+    <tr>
+        <td class="season_inscription">Выбор сезона:</td>
+        <td><a href="{{ previous_season.get_absolute_url }}">21/22</a></td>
+        <td><a href="{{ current_season.get_absolute_url }}">22/23</a></td>
+</table>
+<div class="matches_button">
+    <a href="{{ clubs.0.season.get_absolute_url_for_matches }}">Матчи</a>
+</div>
+<table class="league-table" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table border="0" cellspacing="0" cellpadding="0">
+            <tr class="cell-names">
+                <td class="league-table-el"></td>
+                <td class="league-table-el">Клуб</td>
+                <td class="league-table-el">Матчи</td>
+                <td class="league-table-el">Победы</td>
+                <td class="league-table-el">Ничьи</td>
+                <td class="league-table-el">Пораж.</td>
+                <td class="league-table-el">Заб.</td>
+                <td class="league-table-el">Проп.</td>
+                <td class="league-table-el">Разн.</td>
+                <td class="league-table-el">Очки</td>
+            </tr>
+            {% for club in clubs %}
+                <tr class="league-table-row">
+                    <td class="league-table-el">{{ forloop.counter }}</td>
+                    <td class="league-table-club">
+                        <table><tr>
+                            <td><img src="{{club.name_club.logo.url}}" width=25></td>
+                            <td><span>{{club.name_club}}</span></td>
+                        </tr></table>
+                    </td>
+                    <td class="league-table-el">{{club.games}}</td>
+                    <td class="league-table-el">{{club.wins}}</td>
+                    <td class="league-table-el">{{club.draws}}</td>
+                    <td class="league-table-el">{{club.loses}}</td>
+                    <td class="league-table-el">{{club.goals_scored}}</td>
+                    <td class="league-table-el">{{club.goals_conceded}}</td>
+                    <td class="league-table-el">{{club.goal_difference}}</td>
+                    <td class="league-table-el">{{club.points}}</td>
+                </tr>
+            {% endfor %}
+        </table></td>
+        <td class="league-info">
+            <img src="{{league_logo.url}}">
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

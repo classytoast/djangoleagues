@@ -1,0 +1,241 @@
+html, body {
+	font-family: 'Georgia';
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	color: #444;
+}
+
+.table-page {
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+}
+.table-page tr {height: 100%;}
+
+.clear {clear: both;}
+
+.header {
+	background: #112745;
+	height: 85px;
+}
+
+.logo {
+	background: url('../images/logo.png') no-repeat;
+	width: 90px;
+	height: 90px;
+	background-size: 90px;
+}
+
+.logo2 {
+	background: url('../images/sign.png') no-repeat;
+	width: 160px;
+	height: 90px;
+	background-size: 160px;
+}
+
+ul.mainmenu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 90px;
+	color: #fdc073;
+	font-size: 25px;
+	overflow: hidden;
+}
+ul.mainmenu li {
+	float: left;
+	height: 70px;
+	margin: 25px 40px 0 30px;
+}
+ul.mainmenu li.logo {margin: 0;}
+ul.mainmenu li.logo2 {margin: 0;}
+
+ul.mainmenu li a {
+	color: #D19B4F;
+	text-decoration: none;
+}
+ul.mainmenu li a:hover {
+	color: #EDC080;
+}
+
+.table-content {
+	width: 100%;
+	min-height: 100%;
+	height: 100%;
+}
+
+.left-chapters {
+	margin: 0;
+	background: rgba(159, 164, 214, 0.1);
+	border-right: 1px solid #ccc;
+	min-height: 100%;
+}
+.leftchapters-img {
+    float: right;
+    margin-top: -15px;
+    width: 50px;
+}
+.left-chapters ul {
+	width: 300px;
+	min-height: 100%;
+	margin: 0;
+	padding: 20px 10px 10px 20px;
+	list-style: none;
+	font-size: 20px;
+}
+.left-chapters ul li {
+	margin: 30px 35px 0 20px;
+	padding: 30px 0 50px 0;
+	color: #999;
+	border-bottom: 1px solid rgba(126, 117, 255, 0.4);
+}
+.left-chapters ul li a {
+	color: #444;
+	text-decoration: none;
+}
+.left-chapters ul li a:hover { color: #DB8314; font-size: 21px;}
+
+.content {
+	padding: 10px 20px 20px 40px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.content-text {
+    height: 100%;
+	color: #000;
+	font-size: 17px;
+	font-family: Yandex Sans Display Light;
+}
+.content-text h1 {font-size: 50px;}
+
+.about_page {
+    margin: 20px 50px 0 50px;
+    font-size: 19px;
+}
+.about_page h1 {text-align: center;}
+
+.main_page_table, .logo_in_main {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.main_page_table .inscription_main {
+    vertical-align: top;
+    height: 150px;
+}
+.main_page_table h1 {font-size: 90px; color: #07108A;}
+
+.league-title {
+    text-align: center;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.league-header {
+    background: rgba(159, 164, 214, 0.2);
+    height: 100%;
+    margin: 30px 0 30px 0;
+    font-size: 25px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.league-header td {
+    padding: 0 10px 0 10px;
+    border-right: 1px solid #ccc;
+}
+
+.league-header a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: #060696;
+    text-decoration: none;
+}
+.league-header a:hover {background: rgba(159, 164, 214, 0.1); color: #F7980A;}
+
+.season_inscription {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.matches_button {
+    height: 60px;
+    width: 380.014px;
+    background: rgba(107, 95, 217, 0.4);
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.matches_button a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    color: #000000;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+.matches_button a:hover {background: rgba(107, 95, 217, 0.2);}
+
+.league-table {
+    text-align: center;
+}
+
+.cell-names {
+    background: #5F7199;
+    color: #fdc073;
+    font-size: 19px;
+    text-align: center;
+}
+
+.league-table-club {
+    width: 280px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.league-table-club img, .league-table-club span {
+    margin-left: 10px;
+}
+
+.league-table-club, .league-table-el {
+    background: rgba(166, 170, 191, 0.3);
+    padding: 4px;
+    border-bottom: 1px solid #ccc;
+}
+
+.league-info {
+    vertical-align: top;
+    width: 40%;
+}
+
+.list_of_matches {
+    width: 100%;
+    margin-left: 140px;
+}
+
+.matches-el {
+    background: rgba(166, 170, 191, 0.3);
+    padding: 4px;
+    border-bottom: 1px solid #ccc;
+}
+
+.left_club_in_matches {
+    float: right;
+}
+
+#footer {
+	box-sizing: border-box;
+
+	background: #3F4137;
+	padding: 5px;
+	color: #aaa;
+	font-size: 14px;
+	font-family: Verdana, Geneva, Arial, Helvetica;
+	text-align: left;
+	overflow: hidden;
+}

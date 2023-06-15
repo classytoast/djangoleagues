@@ -1,0 +1,49 @@
+{% extends 'topfive/base.html' %}
+ 
+{% block content %}
+
+<table class="league-header">
+    <tr>
+        <td class="season_inscription">Выбор сезона:</td>
+        <td><a href="{{ previous_season.get_absolute_url_for_matches }}">21/22</a></td>
+        <td><a href="{{ current_season.get_absolute_url_for_matches }}">22/23</a></td>
+</table>
+
+<table class="list_of_matches" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table border="0" cellspacing="0" cellpadding="0">
+            <tr class="cell-names">
+                <td>{{ title }}</td>
+            </tr>
+            <tr><td>
+                <table border="0" cellspacing="0" cellpadding="0">
+                {% for match in matches %}
+                    <tr class="league-table-row">
+                        <td class="matches-el">{{match.date_of_match}}</td>
+                        <td class="matches-el">
+                            <table class="left_club_in_matches"><tr>
+                                <td><span>{{match.home_club}}</span></td>
+                                <td><img src="{{match.home_club.logo.url}}" width=20></td>
+                            </tr></table>
+                        </td>
+                        <td class="matches-el">{{match.home_goals}}</td>
+                        <td class="matches-el">:</td>
+                        <td class="matches-el">{{match.guests_goals}}</td>
+                        <td class="matches-el">
+                            <table><tr>
+                                <td><img src="{{match.guest_club.logo.url}}" width=20></td>
+                                <td><span>{{match.guest_club}}</span></td>
+                            </tr></table>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
+            </td></tr>
+        </table></td>
+        <td class="league-info">
+            <img src="{{league_logo.url}}">
+        </td>
+    </tr>
+</table>
+
+{% endblock %}
